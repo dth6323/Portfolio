@@ -566,6 +566,8 @@ section {
 .oracle-icon { background-color: rgba(248, 0, 0, 0.1); color: #f80000; }
 .angular-icon { background-color: rgba(221, 0, 49, 0.1); color: #dd0031; }
 .git-icon { background-color: rgba(240, 80, 50, 0.1); color: #f05032; }
+.iot-icon { background-color: rgba(20, 184, 166, 0.1); color: #14b8a6; }
+
 
 .skill-card h3 {
     font-size: 1.15rem;
