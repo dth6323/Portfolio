@@ -13,8 +13,12 @@ Chào mừng bạn đến với kho lưu trữ mã nguồn trang Portfolio cá n
 - **HTML5**: Định hình cấu trúc nội dung.
 - **CSS3 (Vanilla)**: Thiết kế giao diện, bố cục Grid & Flexbox, và các hiệu ứng động.
 - **JavaScript (Vanilla ES6+)**: Xử lý logic nghiệp vụ giao diện và hiệu ứng tương tác.
+- **AOS (Animate On Scroll)**: Thư viện tạo các hiệu ứng trượt xuất hiện sinh động khi cuộn trang.
+- **Vanilla Tilt**: Tạo hiệu ứng xoay 3D (tilt) và lóe sáng (glare) tương tác khi hover chuột vào các thẻ.
+- **HTML5 Canvas Particle**: Hệ thống hạt chuyển động liên kết (Tech data streams) tạo nền ấn tượng cho Hero section.
 - **Boxicons**: Thư viện icons sắc nét, hiện đại.
 - **Google Fonts**: Phông chữ Outfit và Inter sang trọng, dễ đọc.
+
 
 ## 📁 Cấu trúc thư mục
 ```text

@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thái Hà - Fullstack Developer Portfolio</title>
     <meta name="description" content="Portfolio cá nhân của Thái Hà - Fullstack / Backend Developer. Kinh nghiệm phát triển Node.js, Java, Spring, Angular và cơ sở dữ liệu MySQL, PostgreSQL, Oracle.">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <!-- Boxicons for UI Icons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation Library CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -44,8 +50,11 @@
     <main>
         <!-- Hero Section -->
         <section id="hero" class="hero-section">
+            <!-- Tech canvas background for particles -->
+            <canvas id="hero-canvas"></canvas>
+            
             <div class="container hero-container">
-                <div class="hero-content">
+                <div class="hero-content" data-aos="fade-right" data-aos-delay="100">
                     <span class="hero-subtitle">Xin chào, tôi là</span>
                     <h1 class="hero-title">Thái Hà</h1>
                     <h2 class="hero-dynamic">Một <span id="dynamic-text">Fullstack Developer</span><span class="typed-cursor">|</span></h2>
@@ -62,7 +71,7 @@
                         <a href="tel:0976919625" aria-label="Phone"><i class="bx bx-phone"></i></a>
                     </div>
                 </div>
-                <div class="hero-image">
+                <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
                     <div class="avatar-wrapper">
                         <img src="avatar.jpg" alt="Thái Hà Avatar" class="avatar-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'">
                         <div class="avatar-backdrop"></div>
@@ -74,12 +83,12 @@
         <!-- About Section -->
         <section id="about" class="about-section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header" data-aos="fade-up">
                     <span class="subheading">Thông tin</span>
                     <h2 class="section-title">Giới Thiệu Bản Thân</h2>
                 </div>
                 <div class="about-grid">
-                    <div class="about-info-card">
+                    <div class="about-info-card" data-aos="fade-right" data-aos-delay="100">
                         <p class="about-bio">
                             Tôi sinh ngày 06/03/2003, hiện đang sinh sống tại Bát Tràng, Gia Lâm, Hà Nội. Tốt nghiệp khoa Công nghệ thông tin trường Đại học Giao Thông Vận Tải, tôi luôn đam mê xây dựng các giải pháp phần mềm thông minh, giải quyết các vấn đề thực tiễn từ hệ thống giám sát môi trường đến quản trị doanh nghiệp và giao thông công cộng.
                         </p>
@@ -107,8 +116,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="about-education-card">
-                        <h3 class="card-subtitle"><i class="bx bxs-graduation"></i> Học vấn & Chứng chỉ</h3>
+                    <div class="about-education-card" data-aos="fade-left" data-aos-delay="200">
+                        <h3 class="card-subtitle"><i class="bx bxs-graduation"></i> Học vấn</h3>
                         <div class="education-timeline">
                             <div class="edu-item">
                                 <span class="edu-year">2021 - 2025</span>
@@ -120,11 +129,6 @@
                                 <h4>THPT Nguyễn Văn Cừ</h4>
                                 <p class="edu-dept">Đạt 9.2 điểm Toán trong kì thi tốt nghiệp THPT</p>
                             </div>
-                            <div class="edu-item">
-                                <span class="edu-year">2024</span>
-                                <h4>Chứng chỉ Tiếng Anh B1</h4>
-                                <p class="edu-dept">Chứng chỉ do trường Đại học cấp</p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -134,13 +138,13 @@
         <!-- Skills Section -->
         <section id="skills" class="skills-section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header" data-aos="fade-up">
                     <span class="subheading">Khả năng</span>
                     <h2 class="section-title">Kỹ Năng Công Nghệ</h2>
                 </div>
                 <div class="skills-grid">
                     <!-- Java -->
-                    <div class="skill-card" data-level="Tốt">
+                    <div class="skill-card" data-level="Tốt" data-aos="fade-up" data-aos-delay="50" data-tilt data-tilt-max="12" data-tilt-glare="true" data-tilt-max-glare="0.15">
                         <div class="skill-icon-wrapper java-icon">
                             <i class="bx bxl-java"></i>
                         </div>
@@ -153,7 +157,7 @@
                     </div>
 
                     <!-- Node.js -->
-                    <div class="skill-card" data-level="Tốt">
+                    <div class="skill-card" data-level="Tốt" data-aos="fade-up" data-aos-delay="100" data-tilt data-tilt-max="12" data-tilt-glare="true" data-tilt-max-glare="0.15">
                         <div class="skill-icon-wrapper nodejs-icon">
                             <i class="bx bxl-nodejs"></i>
                         </div>
@@ -166,7 +170,7 @@
                     </div>
 
                     <!-- MySQL & Postgresql -->
-                    <div class="skill-card" data-level="Tốt">
+                    <div class="skill-card" data-level="Tốt" data-aos="fade-up" data-aos-delay="150" data-tilt data-tilt-max="12" data-tilt-glare="true" data-tilt-max-glare="0.15">
                         <div class="skill-icon-wrapper db-icon">
                             <i class="bx bx-data"></i>
                         </div>
@@ -179,7 +183,7 @@
                     </div>
 
                     <!-- Oracle DB -->
-                    <div class="skill-card" data-level="Khá">
+                    <div class="skill-card" data-level="Khá" data-aos="fade-up" data-aos-delay="200" data-tilt data-tilt-max="12" data-tilt-glare="true" data-tilt-max-gl-are="0.15">
                         <div class="skill-icon-wrapper oracle-icon">
                             <i class="bx bxs-data"></i>
                         </div>
@@ -192,7 +196,7 @@
                     </div>
 
                     <!-- Angular -->
-                    <div class="skill-card" data-level="Khá">
+                    <div class="skill-card" data-level="Khá" data-aos="fade-up" data-aos-delay="250" data-tilt data-tilt-max="12" data-tilt-glare="true" data-tilt-max-glare="0.15">
                         <div class="skill-icon-wrapper angular-icon">
                             <i class="bx bxl-angular"></i>
                         </div>
@@ -205,7 +209,7 @@
                     </div>
 
                     <!-- Git -->
-                    <div class="skill-card" data-level="Khá">
+                    <div class="skill-card" data-level="Khá" data-aos="fade-up" data-aos-delay="300" data-tilt data-tilt-max="12" data-tilt-glare="true" data-tilt-max-glare="0.15">
                         <div class="skill-icon-wrapper git-icon">
                             <i class="bx bxl-git"></i>
                         </div>
@@ -218,7 +222,7 @@
                     </div>
 
                     <!-- Big Data & IoT -->
-                    <div class="skill-card" data-level="Tốt">
+                    <div class="skill-card" data-level="Tốt" data-aos="fade-up" data-aos-delay="350" data-tilt data-tilt-max="12" data-tilt-glare="true" data-tilt-max-glare="0.15">
                         <div class="skill-icon-wrapper iot-icon">
                             <i class="bx bx-network-chart"></i>
                         </div>
@@ -236,13 +240,13 @@
         <!-- Experience Section -->
         <section id="experience" class="experience-section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header" data-aos="fade-up">
                     <span class="subheading">Hành trình</span>
                     <h2 class="section-title">Kinh Nghiệm Làm Việc</h2>
                 </div>
                 <div class="timeline">
                     <!-- Cadpro VN -->
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">08/2025 - Hiện tại</div>
                         <div class="timeline-content">
@@ -254,7 +258,7 @@
                         </div>
                     </div>
                     <!-- VINARE -->
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">11/2024 - 05/2025</div>
                         <div class="timeline-content">
@@ -272,13 +276,13 @@
         <!-- Projects Section -->
         <section id="projects" class="projects-section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header" data-aos="fade-up">
                     <span class="subheading">Sản phẩm</span>
                     <h2 class="section-title">Các Dự Án Đã Thực Hiện</h2>
                 </div>
                 <div class="projects-grid">
                     <!-- Project 1 -->
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="50" data-tilt data-tilt-max="10" data-tilt-glare="true" data-tilt-max-glare="0.1">
                         <div class="project-banner bg-gradient-1">
                             <i class="bx bx-wind project-banner-icon"></i>
                         </div>
@@ -303,7 +307,7 @@
                     </div>
 
                     <!-- Project 2 -->
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="150" data-tilt data-tilt-max="10" data-tilt-glare="true" data-tilt-max-glare="0.1">
                         <div class="project-banner bg-gradient-2">
                             <i class="bx bx-bus project-banner-icon"></i>
                         </div>
@@ -326,7 +330,7 @@
                     </div>
 
                     <!-- Project 3 -->
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="250" data-tilt data-tilt-max="10" data-tilt-glare="true" data-tilt-max-glare="0.1">
                         <div class="project-banner bg-gradient-3">
                             <i class="bx bx-group project-banner-icon"></i>
                         </div>
@@ -349,7 +353,7 @@
                     </div>
 
                     <!-- Project 4 (Hrverse) -->
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="350" data-tilt data-tilt-max="10" data-tilt-glare="true" data-tilt-max-glare="0.1">
                         <div class="project-banner bg-gradient-4">
                             <i class="bx bx-code-alt project-banner-icon"></i>
                         </div>
@@ -381,12 +385,12 @@
         <!-- Contact Section -->
         <section id="contact" class="contact-section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header" data-aos="fade-up">
                     <span class="subheading">Kết nối</span>
                     <h2 class="section-title">Thông Tin Liên Hệ</h2>
                 </div>
                 <div class="contact-grid">
-                    <div class="contact-info">
+                    <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
                         <h3>Hãy cùng xây dựng những điều tuyệt vời!</h3>
                         <p class="contact-text">
                             Tôi luôn sẵn sàng đón nhận những cơ hội hợp tác mới, các dự án thú vị và những thử thách kỹ thuật đầy hứa hẹn. Đừng ngần ngại liên hệ với tôi qua các kênh dưới đây.
@@ -415,7 +419,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="contact-form-wrapper">
+                    <div class="contact-form-wrapper" data-aos="fade-left" data-aos-delay="200">
                         <form id="contact-form" class="contact-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã gửi liên hệ! Tôi sẽ phản hồi lại sớm nhất.');">
                             <div class="form-group">
                                 <label for="name">Họ & Tên</label>
@@ -452,6 +456,12 @@
     <a href="#hero" class="back-to-top" id="back-to-top" aria-label="Back to top">
         <i class="bx bx-up-arrow-alt"></i>
     </a>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    <!-- Vanilla Tilt JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 
     <!-- Custom Script -->
     <script src="script.js"></script>

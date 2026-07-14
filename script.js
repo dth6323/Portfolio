@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Initialize AOS (Animate on Scroll)
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+            easing: 'ease-in-out'
+        });
+    }
+
     // 1. Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const navbar = document.getElementById('navbar');
@@ -51,6 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('theme', 'dark');
             } else {
                 localStorage.setItem('theme', 'light');
+            }
+            
+            // Refresh AOS on theme change to ensure no animation glitches
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
             }
         });
     }
@@ -127,4 +142,102 @@ document.addEventListener('DOMContentLoaded', () => {
             backToTopBtn.classList.remove('show');
         }
     });
+
+    // 5. Tech Canvas Particles (Hero Background representing IoT data nodes)
+    const canvas = document.getElementById('hero-canvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const particleCount = 50;
+        const connectionDistance = 110;
+        
+        function resizeCanvas() {
+            const heroSection = document.getElementById('hero');
+            if (heroSection) {
+                canvas.width = heroSection.clientWidth;
+                canvas.height = heroSection.clientHeight;
+            }
+        }
+        
+        resizeCanvas();
+        
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.6;
+                this.vy = (Math.random() - 0.5) * 0.6;
+                this.radius = Math.random() * 1.5 + 1;
+            }
+            
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = document.body.classList.contains('dark-theme') 
+                    ? 'rgba(167, 139, 250, 0.35)' 
+                    : 'rgba(99, 102, 241, 0.25)';
+                ctx.fill();
+            }
+        }
+        
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+        
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            
+            // Draw connection lines
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (dist < connectionDistance) {
+                        const alpha = (1 - dist / connectionDistance) * 0.12;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = document.body.classList.contains('dark-theme')
+                            ? `rgba(167, 139, 250, ${alpha})`
+                            : `rgba(99, 102, 241, ${alpha})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+                }
+            }
+            
+            requestAnimationFrame(animateParticles);
+        }
+        
+        initParticles();
+        animateParticles();
+        
+        // Re-init particles on resize to redistribute them properly
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                resizeCanvas();
+                initParticles();
+            }, 200);
+        });
+    }
 });
