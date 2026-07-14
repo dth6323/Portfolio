@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thái Hà - Fullstack Developer Portfolio</title>
+    <meta name="description" content="Portfolio cá nhân của Thái Hà - Fullstack / Backend Developer. Kinh nghiệm phát triển Node.js, Java, Spring, Angular và cơ sở dữ liệu MySQL, PostgreSQL, Oracle.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Boxicons for UI Icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#hero" class="logo">Thai<span>Ha.</span></a>
+            
+            <nav class="navbar" id="navbar">
+                <a href="#hero" class="nav-link active">Trang Chủ</a>
+                <a href="#about" class="nav-link">Giới Thiệu</a>
+                <a href="#skills" class="nav-link">Kỹ Năng</a>
+                <a href="#experience" class="nav-link">Kinh Nghiệm</a>
+                <a href="#projects" class="nav-link">Dự Án</a>
+                <a href="#contact" class="nav-link">Liên Hệ</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="bx bx-sun theme-icon-light"></i>
+                    <i class="bx bx-moon theme-icon-dark"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Menu">
+                    <i class="bx bx-menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-subtitle">Xin chào, tôi là</span>
+                    <h1 class="hero-title">Thái Hà</h1>
+                    <h2 class="hero-dynamic">Một <span id="dynamic-text">Fullstack Developer</span><span class="typed-cursor">|</span></h2>
+                    <p class="hero-description">
+                        Tôi là một lập trình viên chuyên về Backend & Fullstack với thế mạnh phát triển ứng dụng web tối ưu hiệu năng bằng Node.js, Spring Boot và quản trị các hệ thống cơ sở dữ liệu lớn như MySQL, PostgreSQL, Oracle.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#contact" class="btn btn-primary">Liên hệ ngay <i class="bx bx-paper-plane"></i></a>
+                        <a href="#projects" class="btn btn-secondary">Xem dự án <i class="bx bx-folder-open"></i></a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/dth6323" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+                        <a href="mailto:dth6323@gmail.com" aria-label="Email"><i class="bx bx-envelope"></i></a>
+                        <a href="tel:0976919625" aria-label="Phone"><i class="bx bx-phone"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="avatar-wrapper">
+                        <img src="avatar.jpg" alt="Thái Hà Avatar" class="avatar-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'">
+                        <div class="avatar-backdrop"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subheading">Thông tin</span>
+                    <h2 class="section-title">Giới Thiệu Bản Thân</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-info-card">
+                        <p class="about-bio">
+                            Tôi sinh ngày 06/03/2003, hiện đang sinh sống tại Bát Tràng, Gia Lâm, Hà Nội. Tốt nghiệp khoa Công nghệ thông tin trường Đại học Giao Thông Vận Tải, tôi luôn đam mê xây dựng các giải pháp phần mềm thông minh, giải quyết các vấn đề thực tiễn từ hệ thống giám sát môi trường đến quản trị doanh nghiệp và giao thông công cộng.
+                        </p>
+                        <div class="personal-details">
+                            <div class="detail-item">
+                                <i class="bx bx-map"></i>
+                                <div>
+                                    <h4>Địa chỉ</h4>
+                                    <p>Bát Tràng, Gia Lâm, Hà Nội</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bx bx-calendar"></i>
+                                <div>
+                                    <h4>Ngày sinh</h4>
+                                    <p>06/03/2003</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bx bx-user"></i>
+                                <div>
+                                    <h4>Giới tính</h4>
+                                    <p>Nam</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-education-card">
+                        <h3 class="card-subtitle"><i class="bx bxs-graduation"></i> Học vấn & Chứng chỉ</h3>
+                        <div class="education-timeline">
+                            <div class="edu-item">
+                                <span class="edu-year">2021 - 2025</span>
+                                <h4>Đại học Giao Thông Vận Tải</h4>
+                                <p class="edu-dept">Khoa Công nghệ thông tin</p>
+                            </div>
+                            <div class="edu-item">
+                                <span class="edu-year">2019 - 2021</span>
+                                <h4>THPT Nguyễn Văn Cừ</h4>
+                                <p class="edu-dept">Đạt 9.2 điểm Toán trong kì thi tốt nghiệp THPT</p>
+                            </div>
+                            <div class="edu-item">
+                                <span class="edu-year">2024</span>
+                                <h4>Chứng chỉ Tiếng Anh B1</h4>
+                                <p class="edu-dept">Chứng chỉ do trường Đại học cấp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subheading">Khả năng</span>
+                    <h2 class="section-title">Kỹ Năng Công Nghệ</h2>
+                </div>
+                <div class="skills-grid">
+                    <!-- Java -->
+                    <div class="skill-card" data-level="Tốt">
+                        <div class="skill-icon-wrapper java-icon">
+                            <i class="bx bxl-java"></i>
+                        </div>
+                        <h3>Java</h3>
+                        <p class="skill-desc">Sử dụng phát triển Backend vững chắc, đặc biệt với Spring Boot trong các dự án quản trị nhân sự HRM.</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                        <span class="skill-badge badge-good">Tốt</span>
+                    </div>
+
+                    <!-- Node.js -->
+                    <div class="skill-card" data-level="Tốt">
+                        <div class="skill-icon-wrapper nodejs-icon">
+                            <i class="bx bxl-nodejs"></i>
+                        </div>
+                        <h3>Node.js</h3>
+                        <p class="skill-desc">Phát triển hệ thống backend thời gian thực, xây dựng API hiệu năng cao cho hệ thống giám sát môi trường và vận tải bus.</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                        <span class="skill-badge badge-good">Tốt</span>
+                    </div>
+
+                    <!-- MySQL & Postgresql -->
+                    <div class="skill-card" data-level="Tốt">
+                        <div class="skill-icon-wrapper db-icon">
+                            <i class="bx bx-data"></i>
+                        </div>
+                        <h3>SQL Databases</h3>
+                        <p class="skill-desc">Làm việc tốt với MySQL và PostgreSQL. Thiết kế tối ưu hóa cấu trúc cơ sở dữ liệu quan hệ phức tạp.</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                        <span class="skill-badge badge-good">Tốt (MySQL, Postgres)</span>
+                    </div>
+
+                    <!-- Oracle DB -->
+                    <div class="skill-card" data-level="Khá">
+                        <div class="skill-icon-wrapper oracle-icon">
+                            <i class="bx bxs-data"></i>
+                        </div>
+                        <h3>Oracle Database</h3>
+                        <p class="skill-desc">Kinh nghiệm triển khai lưu trữ dữ liệu quy mô lớn cho hệ thống tài bảo hiểm và HRM của VINARE.</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                        <span class="skill-badge badge-medium">Khá</span>
+                    </div>
+
+                    <!-- Angular -->
+                    <div class="skill-card" data-level="Khá">
+                        <div class="skill-icon-wrapper angular-icon">
+                            <i class="bx bxl-angular"></i>
+                        </div>
+                        <h3>Angular</h3>
+                        <p class="skill-desc">Phát triển UI/UX động, thiết kế ứng dụng Single Page App (SPA) tương thích responsive.</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                        <span class="skill-badge badge-medium">Khá</span>
+                    </div>
+
+                    <!-- Git -->
+                    <div class="skill-card" data-level="Khá">
+                        <div class="skill-icon-wrapper git-icon">
+                            <i class="bx bxl-git"></i>
+                        </div>
+                        <h3>Git & GitHub</h3>
+                        <p class="skill-desc">Sử dụng thành thạo Git để quản lý phiên bản mã nguồn, phối hợp làm việc nhóm và CI/CD.</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
+                        <span class="skill-badge badge-medium">Khá</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subheading">Hành trình</span>
+                    <h2 class="section-title">Kinh Nghiệm Làm Việc</h2>
+                </div>
+                <div class="timeline">
+                    <!-- Cadpro VN -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">08/2025 - Hiện tại</div>
+                        <div class="timeline-content">
+                            <h3>Cadpro VN</h3>
+                            <span class="job-title">Backend Developer</span>
+                            <p class="job-desc">
+                                Đảm nhiệm phát triển và tối ưu các sản phẩm phần mềm sử dụng NodeJs, MySQL, Postgresql. Thiết kế kiến trúc dịch vụ phía máy chủ đảm bảo tính sẵn sàng cao, truy vấn nhanh và bảo mật phân quyền.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- VINARE -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">11/2024 - 05/2025</div>
+                        <div class="timeline-content">
+                            <h3>Tổng Công Ty CP Tái Bảo Hiểm Quốc Gia VN (VINARE)</h3>
+                            <span class="job-title">Thực tập sinh Fullstack Developer</span>
+                            <p class="job-desc">
+                                Tham gia nghiên cứu và phát triển phần mềm quản lý nhân sự HRM. Thiết kế phân hệ Backend sử dụng Spring Framework (Java) kết hợp giao diện Angular (Frontend) và tối ưu hóa hệ cơ sở dữ liệu lớn Oracle Database.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subheading">Sản phẩm</span>
+                    <h2 class="section-title">Các Dự Án Đã Thực Hiện</h2>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-banner bg-gradient-1">
+                            <i class="bx bx-wind project-banner-icon"></i>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta">
+                                <span class="project-company">Cadpro VN</span>
+                                <span class="project-date">1/2026 - Nay</span>
+                            </div>
+                            <h3>Hệ thống đo Không Khí, Tiếng Ồn & Ngập Lụt</h3>
+                            <p class="project-text">
+                                Phát triển hệ thống IoT nhận dạng dữ liệu đo đạc thời gian thực về chất lượng không khí, độ ồn và mức độ ngập lụt. Thiết kế & phát triển phân quyền bảo mật dựa trên vai trò (RBAC) cho hệ thống của Sở Đà Nẵng và các công ty phụ thuộc.
+                            </p>
+                            <div class="project-tags">
+                                <span>Node.js</span>
+                                <span>PostgreSQL</span>
+                                <span>RBAC</span>
+                                <span>IoT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-banner bg-gradient-2">
+                            <i class="bx bx-bus project-banner-icon"></i>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta">
+                                <span class="project-company">Cadpro VN</span>
+                                <span class="project-date">8/2025 - 1/2026</span>
+                            </div>
+                            <h3>Hệ thống Quản lý & Vận hành Xe Bus Đà Nẵng</h3>
+                            <p class="project-text">
+                                Phát triển trang Admin quản trị thông tin xe bus, hành trình và trạm dừng. Tích hợp cổng thanh toán trực tuyến (Online Payment) tiện lợi cho khách hàng đi xe bus tại Đà Nẵng, nâng cao hiệu quả quản trị vận tải công cộng.
+                            </p>
+                            <div class="project-tags">
+                                <span>Node.js</span>
+                                <span>MySQL</span>
+                                <span>Payment Integration</span>
+                                <span>Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-banner bg-gradient-3">
+                            <i class="bx bx-group project-banner-icon"></i>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta">
+                                <span class="project-company">Vinare / Học tập</span>
+                                <span class="project-date">11/2024 - 5/2025</span>
+                            </div>
+                            <h3>Hệ thống Quản trị Nhân sự (HRM)</h3>
+                            <p class="project-text">
+                                Học tập và phát triển hệ thống quản lý nhân sự chuyên sâu. Thiết kế và phát triển các chức năng cốt lõi như tính lương tự động, quản lý điểm danh thông minh và hệ thống quản lý lưu trữ tệp tin nội bộ bảo mật.
+                            </p>
+                            <div class="project-tags">
+                                <span>Spring Boot</span>
+                                <span>Angular</span>
+                                <span>Oracle DB</span>
+                                <span>Payroll</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 (Hrverse) -->
+                    <div class="project-card">
+                        <div class="project-banner bg-gradient-4">
+                            <i class="bx bx-code-alt project-banner-icon"></i>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta">
+                                <span class="project-company">Cá nhân</span>
+                                <span class="project-date">3/2025 - 6/2025</span>
+                            </div>
+                            <h3>Hrverse - Ứng dụng Quản lý Nhân sự</h3>
+                            <p class="project-text">
+                                Đồ án cá nhân xây dựng ứng dụng HRM hiện đại. Thiết kế cấu trúc cơ sở dữ liệu quan hệ, tích hợp nhiều chức năng tự động hóa nghiệp vụ nhân sự và phát hành mã nguồn mở trên GitHub.
+                            </p>
+                            <div class="project-tags">
+                                <span>Java</span>
+                                <span>Spring</span>
+                                <span>Database Design</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/dth6323/hrverse" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                                    <i class="bx bxl-github"></i> Source Code <i class="bx bx-right-top-arrow-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subheading">Kết nối</span>
+                    <h2 class="section-title">Thông Tin Liên Hệ</h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Hãy cùng xây dựng những điều tuyệt vời!</h3>
+                        <p class="contact-text">
+                            Tôi luôn sẵn sàng đón nhận những cơ hội hợp tác mới, các dự án thú vị và những thử thách kỹ thuật đầy hứa hẹn. Đừng ngần ngại liên hệ với tôi qua các kênh dưới đây.
+                        </p>
+                        <div class="contact-details">
+                            <a href="tel:0976919625" class="contact-card">
+                                <i class="bx bx-phone-call"></i>
+                                <div>
+                                    <h4>Số điện thoại</h4>
+                                    <p>0976 919 625</p>
+                                </div>
+                            </a>
+                            <a href="mailto:dth6323@gmail.com" class="contact-card">
+                                <i class="bx bx-envelope"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>dth6323@gmail.com</p>
+                                </div>
+                            </a>
+                            <div class="contact-card">
+                                <i class="bx bx-map"></i>
+                                <div>
+                                    <h4>Vị trí</h4>
+                                    <p>Bát Tràng, Gia Lâm, Hà Nội</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form" class="contact-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã gửi liên hệ! Tôi sẽ phản hồi lại sớm nhất.');">
+                            <div class="form-group">
+                                <label for="name">Họ & Tên</label>
+                                <input type="text" id="name" required placeholder="Nhập họ tên của bạn">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Địa chỉ Email</label>
+                                <input type="email" id="email" required placeholder="email@viethan.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Lời nhắn</label>
+                                <textarea id="message" rows="5" required placeholder="Tôi có thể giúp gì cho bạn?"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Gửi Lời Nhắn <i class="bx bx-send"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 Thái Hà. Designed with passion.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/dth6323" target="_blank" rel="noopener noreferrer"><i class="bx bxl-github"></i></a>
+                <a href="mailto:dth6323@gmail.com"><i class="bx bx-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#hero" class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="bx bx-up-arrow-alt"></i>
+    </a>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
