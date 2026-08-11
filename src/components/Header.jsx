@@ -11,7 +11,7 @@ export const Header = ({ onOpenContact }) => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
 
-      const sections = ['hero', 'projects', 'skills', 'tradeoffs', 'contact'];
+      const sections = ['hero', 'projects', 'skills', 'experience', 'contact'];
       for (const section of sections) {
         const el = document.getElementById(section);
         if (el) {
@@ -45,7 +45,7 @@ export const Header = ({ onOpenContact }) => {
           </div>
           <div className="logo-text">
             <span className="logo-name">{DEVELOPER_PROFILE.name}</span>
-            <span className="logo-title">SR. SYSTEM ARCHITECT</span>
+            <span className="logo-title">{DEVELOPER_PROFILE.title.toUpperCase()}</span>
           </div>
         </a>
 
@@ -59,7 +59,7 @@ export const Header = ({ onOpenContact }) => {
                 aria-current={activeSection === 'hero' ? 'page' : undefined}
                 onClick={(e) => { e.preventDefault(); handleNavClick('hero'); }}
               >
-                <span className="nav-num">01.</span> TOPOLOGY
+                <span className="nav-num">01.</span> GIỚI THIỆU
               </a>
             </li>
             <li>
@@ -69,7 +69,7 @@ export const Header = ({ onOpenContact }) => {
                 aria-current={activeSection === 'projects' ? 'page' : undefined}
                 onClick={(e) => { e.preventDefault(); handleNavClick('projects'); }}
               >
-                <span className="nav-num">02.</span> PROJECTS
+                <span className="nav-num">02.</span> DỰ ÁN NỔI BẬT
               </a>
             </li>
             <li>
@@ -79,17 +79,17 @@ export const Header = ({ onOpenContact }) => {
                 aria-current={activeSection === 'skills' ? 'page' : undefined}
                 onClick={(e) => { e.preventDefault(); handleNavClick('skills'); }}
               >
-                <span className="nav-num">03.</span> MATRIX
+                <span className="nav-num">03.</span> KỸ NĂNG
               </a>
             </li>
             <li>
               <a 
-                href="#tradeoffs" 
-                className={`nav-link ${activeSection === 'tradeoffs' ? 'active' : ''}`}
-                aria-current={activeSection === 'tradeoffs' ? 'page' : undefined}
-                onClick={(e) => { e.preventDefault(); handleNavClick('tradeoffs'); }}
+                href="#experience" 
+                className={`nav-link ${activeSection === 'experience' ? 'active' : ''}`}
+                aria-current={activeSection === 'experience' ? 'page' : undefined}
+                onClick={(e) => { e.preventDefault(); handleNavClick('experience'); }}
               >
-                <span className="nav-num">04.</span> BENCHMARKS
+                <span className="nav-num">04.</span> KINH NGHIỆM
               </a>
             </li>
             <li>
@@ -99,7 +99,7 @@ export const Header = ({ onOpenContact }) => {
                 aria-current={activeSection === 'contact' ? 'page' : undefined}
                 onClick={(e) => { e.preventDefault(); handleNavClick('contact'); }}
               >
-                <span className="nav-num">05.</span> CONTACT
+                <span className="nav-num">05.</span> LIÊN HỆ
               </a>
             </li>
           </ul>
@@ -108,19 +108,19 @@ export const Header = ({ onOpenContact }) => {
         <div className="header-actions">
           <div className="status-badge">
             <span className="status-dot"></span>
-            <span className="status-text">SYSTEM ONLINE</span>
+            <span className="status-text">HỆ THỐNG ONLINE</span>
           </div>
           
           <button className="btn btn-primary header-connect-btn" onClick={onOpenContact}>
             <Send size={14} />
-            <span>CONNECT</span>
+            <span>KẾT NỐI</span>
           </button>
 
           {/* Mobile Hamburger Toggle Button */}
           <button 
             className="mobile-menu-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={mobileMenuOpen ? "Đóng menu điều hướng" : "Mở menu điều hướng"}
             aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -139,7 +139,7 @@ export const Header = ({ onOpenContact }) => {
                   className={`mobile-nav-link ${activeSection === 'hero' ? 'active' : ''}`}
                   onClick={(e) => { e.preventDefault(); handleNavClick('hero'); }}
                 >
-                  <span className="nav-num">01.</span> TOPOLOGY
+                  <span className="nav-num">01.</span> GIỚI THIỆU THÔNG TIN
                 </a>
               </li>
               <li>
@@ -148,7 +148,7 @@ export const Header = ({ onOpenContact }) => {
                   className={`mobile-nav-link ${activeSection === 'projects' ? 'active' : ''}`}
                   onClick={(e) => { e.preventDefault(); handleNavClick('projects'); }}
                 >
-                  <span className="nav-num">02.</span> FEATURED PROJECTS
+                  <span className="nav-num">02.</span> DỰ ÁN NỔI BẬT
                 </a>
               </li>
               <li>
@@ -157,16 +157,16 @@ export const Header = ({ onOpenContact }) => {
                   className={`mobile-nav-link ${activeSection === 'skills' ? 'active' : ''}`}
                   onClick={(e) => { e.preventDefault(); handleNavClick('skills'); }}
                 >
-                  <span className="nav-num">03.</span> TECH MATRIX
+                  <span className="nav-num">03.</span> BẢNG KỸ NĂNG
                 </a>
               </li>
               <li>
                 <a 
-                  href="#tradeoffs" 
-                  className={`mobile-nav-link ${activeSection === 'tradeoffs' ? 'active' : ''}`}
-                  onClick={(e) => { e.preventDefault(); handleNavClick('tradeoffs'); }}
+                  href="#experience" 
+                  className={`mobile-nav-link ${activeSection === 'experience' ? 'active' : ''}`}
+                  onClick={(e) => { e.preventDefault(); handleNavClick('experience'); }}
                 >
-                  <span className="nav-num">04.</span> ARCHITECTURE BENCHMARKS
+                  <span className="nav-num">04.</span> QUÁ TRÌNH LÀM VIỆC
                 </a>
               </li>
               <li>
@@ -175,7 +175,7 @@ export const Header = ({ onOpenContact }) => {
                   className={`mobile-nav-link ${activeSection === 'contact' ? 'active' : ''}`}
                   onClick={(e) => { e.preventDefault(); handleNavClick('contact'); }}
                 >
-                  <span className="nav-num">05.</span> SYSTEM TERMINAL
+                  <span className="nav-num">05.</span> LIÊN HỆ & DOWNLOAD CV
                 </a>
               </li>
             </ul>
@@ -187,7 +187,7 @@ export const Header = ({ onOpenContact }) => {
                 onClick={() => { setMobileMenuOpen(false); onOpenContact(); }}
               >
                 <Send size={15} />
-                <span>INITIATE CONNECTION</span>
+                <span>GỬI THÔNG ĐIỆP KẾT NỐI</span>
               </button>
             </div>
           </div>

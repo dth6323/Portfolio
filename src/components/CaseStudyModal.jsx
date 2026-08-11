@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, ExternalLink, Github, CheckCircle2, Cpu, BarChart3, Layers } from 'lucide-react';
+import { X, CheckCircle2, Calendar, Building2 } from 'lucide-react';
 
 export const CaseStudyModal = ({ project, onClose }) => {
   useEffect(() => {
@@ -22,7 +22,7 @@ export const CaseStudyModal = ({ project, onClose }) => {
 
   if (!project) return null;
 
-  const { title, category, description, metrics, techStack, githubUrl, liveUrl, architectureDetails } = project;
+  const { title, category, company, period, description, metrics, techStack, architectureDetails } = project;
 
   return (
     <div className="modal-overlay" onClick={onClose} role="presentation">
@@ -33,31 +33,26 @@ export const CaseStudyModal = ({ project, onClose }) => {
         aria-modal="true"
         aria-labelledby="case-study-title"
       >
-        <button className="modal-close" onClick={onClose} aria-label="Close case study modal">
+        <button className="modal-close" onClick={onClose} aria-label="Đóng cửa sổ dự án">
           <X size={24} />
         </button>
 
         <div className="project-header" style={{ marginBottom: '1.25rem' }}>
           <div>
-            <span className="project-tag" style={{ marginBottom: '0.5rem', display: 'inline-block' }}>
-              {category} // CASE STUDY
-            </span>
-            <h2 id="case-study-title" style={{ fontSize: '1.8rem', color: 'var(--text-primary)' }}>{title}</h2>
-          </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
+              <span className="project-tag" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+                <Building2 size={13} />
+                <span>{company} // {category}</span>
+              </span>
 
-          <div className="project-links">
-            {githubUrl && (
-              <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-                <Github size={15} />
-                <span>GITHUB</span>
-              </a>
-            )}
-            {liveUrl && (
-              <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                <ExternalLink size={15} />
-                <span>LIVE DEMO</span>
-              </a>
-            )}
+              {/* Dedicated Period Badge */}
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--signal-cyan)', background: 'rgba(0, 240, 255, 0.08)', padding: '0.2rem 0.65rem', border: '1px solid rgba(0, 240, 255, 0.25)', borderRadius: 'var(--radius-sm)', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+                <Calendar size={13} />
+                <span>THỜI GIAN THỰC HIỆN: {period}</span>
+              </span>
+            </div>
+
+            <h2 id="case-study-title" style={{ fontSize: '1.8rem', color: 'var(--text-primary)', marginTop: '0.5rem' }}>{title}</h2>
           </div>
         </div>
 
@@ -75,7 +70,7 @@ export const CaseStudyModal = ({ project, onClose }) => {
         <div style={{ display: 'grid', gap: '1.5rem', marginBottom: '1.75rem' }}>
           <div style={{ background: 'var(--bg-slate)', border: '1px solid var(--border-subtle)', padding: '1.25rem', borderRadius: 'var(--radius-sm)' }}>
             <h3 style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', color: 'var(--signal-amber)', marginBottom: '0.5rem' }}>
-              PROBLEM & BOTTLENECK STATEMENT
+              THÁCH THỨC & NGHẼN BÌNH VÔI HỆ THỐNG
             </h3>
             <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
               {architectureDetails?.problem}
@@ -84,7 +79,7 @@ export const CaseStudyModal = ({ project, onClose }) => {
 
           <div style={{ background: 'var(--bg-slate)', border: '1px solid var(--border-cad)', padding: '1.25rem', borderRadius: 'var(--radius-sm)' }}>
             <h3 style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', color: 'var(--signal-cyan)', marginBottom: '0.5rem' }}>
-              ARCHITECTURAL SOLUTION
+              GIẢI PHÁP THIẾT KẾ KIẾN TRÚC
             </h3>
             <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
               {architectureDetails?.solution}
@@ -96,7 +91,7 @@ export const CaseStudyModal = ({ project, onClose }) => {
         {architectureDetails?.architectureDiagram && (
           <div style={{ marginBottom: '1.75rem' }}>
             <h3 style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.5rem', textTransform: 'uppercase' }}>
-              SYSTEM DATA FLOW TOPOLOGY
+              LUỒNG DỮ LIỆU TOPOLOGY HỆ THỐNG
             </h3>
             <div className="code-block" style={{ border: '1px solid var(--border-cad)' }}>
               <code>{architectureDetails.architectureDiagram}</code>
@@ -107,7 +102,7 @@ export const CaseStudyModal = ({ project, onClose }) => {
         {/* Key Engineering Decisions */}
         <div style={{ marginBottom: '1.75rem' }}>
           <h3 style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.75rem', textTransform: 'uppercase' }}>
-            KEY ENGINEERING DECISIONS & TRADE-OFFS
+            QUYẾT ĐỊNH KỸ THUẬT & TỐI ƯU CỐT LÕI
           </h3>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {architectureDetails?.keyDecisions?.map((decision, idx) => (
@@ -122,7 +117,7 @@ export const CaseStudyModal = ({ project, onClose }) => {
         {/* Tech Stack Badges */}
         <div>
           <h3 style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.75rem', textTransform: 'uppercase' }}>
-            TECHNOLOGY STACK
+            CÔNG NGHỆ SỬ DỤNG
           </h3>
           <div className="tech-stack-badges">
             {techStack.map((tech, idx) => (

@@ -12,11 +12,11 @@ export const Footer = () => {
         </div>
 
         <div>
-          TECHNICAL SYSTEM BLUEPRINT FORM — REACT 19 + VITE
+          HỆ THỐNG BẢN VẼ KIẾN TRÚC — REACT 19 + VITE
         </div>
 
         <div>
-          © {new Date().getFullYear()} ALL RIGHTS RESERVED
+          © {new Date().getFullYear()} BẢN QUYỀN ĐẶNG THÁI HÀ
         </div>
       </div>
     </footer>

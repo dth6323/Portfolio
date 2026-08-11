@@ -7,10 +7,10 @@ export const TradeoffsSection = () => {
     <section id="tradeoffs" className="section">
       <div className="section-header">
         <h2 className="section-title">
-          Engineering <span className="text-cyan">Trade-offs</span> & Benchmarks
+          Phân Tích <span className="text-cyan">Trade-off</span> & Benchmark
         </h2>
         <p className="section-subtitle">
-          Senior-level system design requires weighing constraints and making principled architectural trade-offs.
+          Quyết định kiến trúc phần mềm chuyên sâu đòi hỏi sự cân nhắc kỹ lưỡng giữa các ràng buộc công nghệ.
         </p>
       </div>
 
@@ -25,21 +25,21 @@ export const TradeoffsSection = () => {
             <div className="comparison-box">
               <div className="comp-side">
                 <h4>{item.sideA.name}</h4>
-                <p><strong>Pros:</strong> {item.sideA.pros}</p>
-                <p style={{ marginTop: '0.4rem' }}><strong>Cons:</strong> {item.sideA.cons}</p>
+                <p><strong>Ưu điểm:</strong> {item.sideA.pros}</p>
+                <p style={{ marginTop: '0.4rem' }}><strong>Hạn chế:</strong> {item.sideA.cons}</p>
               </div>
 
               <div className="comp-side" style={{ paddingLeft: '0.75rem' }}>
                 <h4 style={{ color: 'var(--signal-cyan)' }}>{item.sideB.name}</h4>
-                <p><strong>Pros:</strong> {item.sideB.pros}</p>
-                <p style={{ marginTop: '0.4rem' }}><strong>Cons:</strong> {item.sideB.cons}</p>
+                <p><strong>Ưu điểm:</strong> {item.sideB.pros}</p>
+                <p style={{ marginTop: '0.4rem' }}><strong>Hạn chế:</strong> {item.sideB.cons}</p>
               </div>
             </div>
 
             <div className="tradeoff-verdict">
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontWeight: 600, color: 'var(--signal-cyan)', marginBottom: '0.25rem' }}>
                 <CheckCircle2 size={15} />
-                <span>ARCHITECTURAL RATIONALE</span>
+                <span>ĐÁNH GIÁ RATIONALE THỰC TẾ</span>
               </div>
               <div>{item.verdict}</div>
             </div>

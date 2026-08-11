@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Terminal, Send, Download, Mail, Github, Linkedin, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Terminal, Send, Download, Mail, Phone, MapPin, Facebook, Github, Linkedin, CheckCircle2, AlertCircle } from 'lucide-react';
 import { DEVELOPER_PROFILE } from '../data/portfolioData';
 
 export const ContactTerminal = () => {
@@ -24,192 +24,185 @@ export const ContactTerminal = () => {
     }, 1200);
   };
 
-  const handleDownloadResume = (e) => {
-    e.preventDefault();
-    // Simulate real PDF file download stream
-    const element = document.createElement('a');
-    const file = new Blob([
-      `ALEX MERCER — SENIOR FULL-STACK ENGINEER & SYSTEM ARCHITECT\n\n` +
-      `Email: ${DEVELOPER_PROFILE.socials.email}\n` +
-      `GitHub: ${DEVELOPER_PROFILE.socials.github}\n` +
-      `LinkedIn: ${DEVELOPER_PROFILE.socials.linkedin}\n\n` +
-      `SUMMARY:\n${DEVELOPER_PROFILE.bio}\n\n` +
-      `KEY METRICS:\n` +
-      `- Global P99 Latency: < 42ms\n` +
-      `- Daily Active Requests: 8.4M+\n` +
-      `- Production Uptime: 99.99%\n` +
-      `- Systems Engineered: 24+\n\n` +
-      `CORE EXPERTISE:\n` +
-      `Go, Node.js, Rust, React 19, TypeScript, PostgreSQL, ClickHouse, Redis, Kafka, Docker, Kubernetes`
-    ], { type: 'text/plain;charset=utf-8' });
-    element.href = URL.createObjectURL(file);
-    element.download = "Alex_Mercer_Senior_FullStack_Engineer_Resume.txt";
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
-  };
-
   return (
     <section id="contact" className="section">
       <div className="section-header">
         <h2 className="section-title">
-          System <span className="text-cyan">Terminal</span> & Contact
+          Terminal <span className="text-cyan">Liên Hệ</span> & Tải CV
         </h2>
         <p className="section-subtitle">
-          Initiate direct communication for senior full-stack roles, system architecture consulting, or technical advisory.
+          Kết nối trực tiếp về các cơ hội tuyển dụng Backend Developer, tư vấn kiến trúc hệ thống hoặc hợp tác dự án.
         </p>
       </div>
 
-      <div className="contact-grid">
+      <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', alignItems: 'stretch' }}>
         {/* Left Column: Direct Contact & Resume */}
-        <div className="contact-info">
-          <div className="cad-frame" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-            <div>
+        <div className="contact-info" style={{ height: '100%' }}>
+          <div className="cad-frame" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '1.75rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
                 <Terminal size={18} className="text-cyan" />
-                <h3 style={{ fontSize: '1.4rem' }}>Direct Dispatch Channels</h3>
+                <h3 style={{ fontSize: '1.35rem', margin: 0 }}>Kênh Liên Hệ Trực Tiếp</h3>
               </div>
 
-              <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', marginBottom: '2rem' }}>
-                Currently open to select Staff / Senior Full-Stack Lead opportunities, distributed system consulting, and architectural code reviews.
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
+                Sẵn sàng tiếp nhận vị trí Backend Developer (NestJS / Java) tại Hà Nội hoặc làm việc Remote.
               </p>
 
-              <div className="contact-methods">
-                <a href={`mailto:${DEVELOPER_PROFILE.socials.email}`} className="contact-method-item">
-                  <Mail size={20} className="text-cyan" />
+              <div className="contact-methods" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: 'auto' }}>
+                <a href={DEVELOPER_PROFILE.socials.phone} className="contact-method-item">
+                  <Phone size={18} className="text-cyan" />
                   <div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--text-muted)' }}>PRIMARY EMAIL</div>
-                    <div style={{ fontWeight: 600 }}>{DEVELOPER_PROFILE.socials.email}</div>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)' }}>DI ĐỘNG / ZALO</div>
+                    <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>{DEVELOPER_PROFILE.phone}</div>
                   </div>
                 </a>
 
-                <a href={DEVELOPER_PROFILE.socials.github} target="_blank" rel="noopener noreferrer" className="contact-method-item">
-                  <Github size={20} className="text-cyan" />
+                <a href={DEVELOPER_PROFILE.socials.email} className="contact-method-item">
+                  <Mail size={18} className="text-cyan" />
                   <div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--text-muted)' }}>GITHUB REPOSITORIES</div>
-                    <div style={{ fontWeight: 600 }}>github.com/alexmercer</div>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)' }}>EMAIL CHÍNH THỨC</div>
+                    <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>{DEVELOPER_PROFILE.email}</div>
                   </div>
                 </a>
 
-                <a href={DEVELOPER_PROFILE.socials.linkedin} target="_blank" rel="noopener noreferrer" className="contact-method-item">
-                  <Linkedin size={20} className="text-cyan" />
+                <a href={DEVELOPER_PROFILE.facebook} target="_blank" rel="noopener noreferrer" className="contact-method-item">
+                  <Facebook size={18} className="text-cyan" />
                   <div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--text-muted)' }}>LINKEDIN PROFILE</div>
-                    <div style={{ fontWeight: 600 }}>linkedin.com/in/alexmercer</div>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)' }}>FACEBOOK</div>
+                    <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>ha.hightlight</div>
                   </div>
                 </a>
+
+                <div className="contact-method-item" style={{ cursor: 'default' }}>
+                  <MapPin size={18} className="text-cyan" />
+                  <div>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)' }}>ĐỊA CHỈ</div>
+                    <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>{DEVELOPER_PROFILE.location}</div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-subtle)' }}>
-              <button className="btn btn-primary" style={{ width: '100%' }} onClick={handleDownloadResume}>
+            <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: '1px solid var(--border-subtle)' }}>
+              <a 
+                href={DEVELOPER_PROFILE.resumePdfUrl} 
+                download="Dang-Thai-Ha-JavaDeveloper.pdf" 
+                className="btn btn-primary" 
+                style={{ width: '100%' }}
+              >
                 <Download size={16} />
-                <span>DOWNLOAD RESUME ARCHIVE</span>
-              </button>
+                <span>TẢI CV ĐẶNG THÁI HÀ (PDF)</span>
+              </a>
             </div>
           </div>
         </div>
 
         {/* Right Column: Terminal Message Dispatch Form */}
-        <div className="terminal-form cad-frame">
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--signal-cyan)' }}>
-              [SECURE MESSAGE TERMINAL v2.4]
+        <div className="terminal-form cad-frame" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '1.75rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--signal-cyan)', fontWeight: 600 }}>
+                [TERMINAL GỬI THÔNG ĐIỆP]
+              </div>
+              <div className="status-badge" style={{ fontSize: '0.7rem' }}>
+                <span>MÃ HÓA SECURITY</span>
+              </div>
             </div>
-            <div className="status-badge" style={{ fontSize: '0.7rem' }}>
-              <span>ENCRYPTED</span>
-            </div>
+
+            {status === 'success' && (
+              <div className="tradeoff-verdict" style={{ marginBottom: '1.25rem', borderColor: 'var(--signal-emerald)' }} role="alert">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--signal-emerald)', fontWeight: 600 }}>
+                  <CheckCircle2 size={16} />
+                  <span>ĐÃ NHẬN THÔNG ĐIỆP KẾT NỐI</span>
+                </div>
+                <p style={{ fontSize: '0.88rem', marginTop: '0.25rem' }}>
+                  Cảm ơn bạn đã gửi thông tin. Đặng Thái Hà sẽ phản hồi trong vòng 24 giờ.
+                </p>
+              </div>
+            )}
+
+            {status === 'error' && (
+              <div className="tradeoff-verdict" style={{ marginBottom: '1.25rem', borderColor: 'var(--signal-rose)' }} role="alert">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--signal-rose)', fontWeight: 600 }}>
+                  <AlertCircle size={16} />
+                  <span>LỖI GỬI THÔNG ĐIỆP</span>
+                </div>
+                <p style={{ fontSize: '0.88rem', marginTop: '0.25rem' }}>
+                  Vui lòng điền đầy đủ các trường bắt buộc (Họ tên, Email và Nội dung).
+                </p>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
+              <div>
+                <div className="form-group">
+                  <label className="form-label" htmlFor="name">HỌ VÀ TÊN NGUỜI GỬI *</label>
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    className="form-input"
+                    placeholder="Ví dụ: Nguyễn Văn A (Nhà tuyển dụng)"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label className="form-label" htmlFor="email">EMAIL PHẢN HỒI *</label>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    className="form-input"
+                    placeholder="nguyenvana@company.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label className="form-label" htmlFor="company">TÊN TỔ CHỨC / CÔNG TY</label>
+                  <input
+                    id="company"
+                    type="text"
+                    name="company"
+                    className="form-input"
+                    placeholder="Ví dụ: Tập đoàn Công nghệ Acme"
+                    value={formData.company}
+                    onChange={handleChange}
+                  />
+                </div>
+
+                <div className="form-group" style={{ marginBottom: '1.25rem' }}>
+                  <label className="form-label" htmlFor="message">NỘI DUNG THÔNG ĐIỆP *</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    className="form-textarea"
+                    placeholder="Mô tả vị trí tuyển dụng, yêu cầu dự án hoặc trao đổi kỹ thuật..."
+                    value={formData.message}
+                    onChange={handleChange}
+                    style={{ minHeight: '90px' }}
+                    required
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                className="btn btn-primary"
+                style={{ width: '100%', marginTop: 'auto' }}
+                disabled={status === 'transmitting'}
+              >
+                <Send size={15} />
+                <span>{status === 'transmitting' ? 'ĐANG GỬI DỮ LIỆU...' : 'GỬI THÔNG ĐIỆP'}</span>
+              </button>
+            </form>
           </div>
-
-          {status === 'success' && (
-            <div className="tradeoff-verdict" style={{ marginBottom: '1.25rem', borderColor: 'var(--signal-emerald)' }} role="alert">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--signal-emerald)', fontWeight: 600 }}>
-                <CheckCircle2 size={16} />
-                <span>TRANSMISSION ACKNOWLEDGED</span>
-              </div>
-              <p style={{ fontSize: '0.88rem', marginTop: '0.25rem' }}>
-                Your message has been successfully routed. I will respond within 24 hours.
-              </p>
-            </div>
-          )}
-
-          {status === 'error' && (
-            <div className="tradeoff-verdict" style={{ marginBottom: '1.25rem', borderColor: 'var(--signal-rose)' }} role="alert">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--signal-rose)', fontWeight: 600 }}>
-                <AlertCircle size={16} />
-                <span>TRANSMISSION ERROR</span>
-              </div>
-              <p style={{ fontSize: '0.88rem', marginTop: '0.25rem' }}>
-                Please complete all required fields (Name, Email, and Message).
-              </p>
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label className="form-label" htmlFor="name">IDENTIFIER / YOUR NAME *</label>
-              <input
-                id="name"
-                type="text"
-                name="name"
-                className="form-input"
-                placeholder="e.g. Sarah Jenkins (Engineering Manager)"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label className="form-label" htmlFor="email">RETURN DISPATCH EMAIL *</label>
-              <input
-                id="email"
-                type="email"
-                name="email"
-                className="form-input"
-                placeholder="sarah@company.com"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label className="form-label" htmlFor="company">ORGANIZATION / COMPANY</label>
-              <input
-                id="company"
-                type="text"
-                name="company"
-                className="form-input"
-                placeholder="e.g. Acme Cloud Corp"
-                value={formData.company}
-                onChange={handleChange}
-              />
-            </div>
-
-            <div className="form-group">
-              <label className="form-label" htmlFor="message">TRANSMISSION PAYLOAD / MESSAGE *</label>
-              <textarea
-                id="message"
-                name="message"
-                className="form-textarea"
-                placeholder="Describe project requirements, tech stack, or engineering position..."
-                value={formData.message}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="btn btn-primary"
-              style={{ width: '100%', marginTop: '0.5rem' }}
-              disabled={status === 'transmitting'}
-            >
-              <Send size={15} />
-              <span>{status === 'transmitting' ? 'TRANSMITTING PAYLOAD...' : 'TRANSMIT PAYLOAD'}</span>
-            </button>
-          </form>
         </div>
       </div>
     </section>

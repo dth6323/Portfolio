@@ -4,7 +4,7 @@ import { HeroTopology } from './components/HeroTopology';
 import { ProjectShowcase } from './components/ProjectShowcase';
 import { CaseStudyModal } from './components/CaseStudyModal';
 import { SkillsMatrix } from './components/SkillsMatrix';
-import { TradeoffsSection } from './components/TradeoffsSection';
+import { WorkExperience } from './components/WorkExperience';
 import { ContactTerminal } from './components/ContactTerminal';
 import { Footer } from './components/Footer';
 import { BackgroundCanvas } from './components/BackgroundCanvas';
@@ -36,7 +36,7 @@ export default function App() {
 
         <SkillsMatrix />
 
-        <TradeoffsSection />
+        <WorkExperience />
 
         <ContactTerminal />
       </main>

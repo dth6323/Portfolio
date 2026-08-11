@@ -9,10 +9,10 @@ export const SkillsMatrix = () => {
 
   const getCategoryIcon = (id) => {
     switch (id) {
-      case 'frontend': return <Cpu size={16} />;
       case 'backend': return <Server size={16} />;
-      case 'data': return <Database size={16} />;
-      case 'devops': return <Cloud size={16} />;
+      case 'database': return <Database size={16} />;
+      case 'storage': return <Cloud size={16} />;
+      case 'frontend': return <Cpu size={16} />;
       default: return <Cpu size={16} />;
     }
   };
@@ -21,10 +21,10 @@ export const SkillsMatrix = () => {
     <section id="skills" className="section">
       <div className="section-header">
         <h2 className="section-title">
-          Technical Competency <span className="text-cyan">Matrix</span>
+          Bảng Kỹ Năng & <span className="text-cyan">Công Nghệ</span>
         </h2>
         <p className="section-subtitle">
-          Comprehensive breakdown of technical capabilities, architecture patterns, and production experience across domains.
+          Tổng hợp chi tiết năng lực lập trình Java/Fullstack, CSDL lớn và công cụ hạ tầng triển khai thực tế.
         </p>
       </div>
 
