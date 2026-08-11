@@ -8,7 +8,7 @@ export const DEVELOPER_PROFILE = {
   facebook: "https://www.facebook.com/ha.hightlight/",
   education: "Đại học Giao Thông Vận Tải (Khoa CNTT - GPA 3.0)",
   availability: "Sẵn sàng nhận vị trí Backend Developer",
-  resumePdfUrl: "/Dang-Thai-Ha-JavaDeveloper.pdf",
+  resumePdfUrl: "./Dang-Thai-Ha-JavaDeveloper.pdf",
   bio: "Backend Developer chuyên sâu phát triển ứng dụng NestJS (TS) & Java Spring Boot. Kinh nghiệm thực chiến tại Cadpro thiết kế nền tảng IoT quan trắc môi trường (không khí, tiếng ồn, ngập lụt), phân quyền RBAC đa đơn vị, tối ưu CSDL lớn PostgreSQL (Partitioning), tích hợp MQTT/Redis realtime, hệ thống xe bus Đà Nẵng và các dự án Thương mại điện tử & Kiosk phần cứng được Vibe Code 100%.",
   metrics: [
     { label: "Công Ty Hiện Tại", value: "Cadpro VN" },
