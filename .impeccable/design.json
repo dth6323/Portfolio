@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-11T14:41:00Z",
+  "title": "Senior Full-Stack Developer Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Signal Cyan", "canonical": "#00F0FF", "tonalRamp": ["#002B33", "#005566", "#008099", "#00AA00", "#00D5FF", "#00F0FF", "#66F5FF", "#CCFCFF"] },
+      "neutral-bg": { "role": "neutral", "displayName": "Blueprint Dark Ground", "canonical": "#070B12", "tonalRamp": ["#030508", "#070B12", "#0F1726", "#17243B", "#1F304F", "#273D64", "#355285", "#5275B2"] },
+      "amber-voltage": { "role": "secondary", "displayName": "Amber Voltage", "canonical": "#FFB000", "tonalRamp": ["#332300", "#664600", "#996900", "#CC8C00", "#FFB000", "#FFC433", "#FFD866", "#FFE899"] },
+      "emerald-live": { "role": "tertiary", "displayName": "Emerald Live Node", "canonical": "#00E699", "tonalRamp": ["#002E1F", "#005C3D", "#008A5C", "#00B87A", "#00E699", "#33EBAD", "#66F0C2", "#99F5D6"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display Headline", "purpose": "Hero title and primary section headers." },
+      "body": { "displayName": "Body Sans", "purpose": "Main paragraph text and case study prose." },
+      "label": { "displayName": "Monospace Telemetry", "purpose": "Code, telemetry metrics, and CAD labels." }
+    },
+    "shadows": [
+      { "name": "cyan-glow", "value": "0 0 15px rgba(0, 240, 255, 0.15)", "purpose": "Interactive node selection and button hover focus." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Fluid micro-interactions and modal transitions." }
+    ],
+    "breakpoints": [
+      { "name": "desktop", "value": "1280px" },
+      { "name": "tablet", "value": "960px" },
+      { "name": "mobile", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary CAD Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary action target with signal cyan border and hover glow.",
+      "html": "<button class=\"ds-btn-primary\">CONNECT</button>",
+      "css": ".ds-btn-primary { background: rgba(0, 240, 255, 0.12); color: #00F0FF; border: 1px solid #00F0FF; padding: 0.65rem 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: 600; border-radius: 4px; cursor: pointer; transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background: rgba(0, 240, 255, 0.22); box-shadow: 0 0 20px rgba(0, 240, 255, 0.35); transform: translateY(-1px); }"
+    },
+    {
+      "name": "Secondary CAD Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary action button with dark surface and subtle CAD border.",
+      "html": "<button class=\"ds-btn-secondary\">VIEW CASE STUDY</button>",
+      "css": ".ds-btn-secondary { background: #111A2E; color: #F0F4FC; border: 1px solid rgba(0, 240, 255, 0.18); padding: 0.65rem 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: 600; border-radius: 4px; cursor: pointer; transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-secondary:hover { background: #16223B; border-color: rgba(0, 240, 255, 0.45); color: #00F0FF; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Technical CAD System Blueprint",
+    "overview": "The design system treats software craftsmanship as an interactive engineering blueprint rather than a generic resume document. It presents full-stack architecture, system metrics, microservice topologies, and technical trade-offs through precision CAD schematics, technical grids, monospace telemetry callouts, and signal cyan indicators.",
+    "keyCharacteristics": [
+      "Deep blueprint slate and CAD surface grounding (#070B12, #0C1220, #111A2E).",
+      "High-visibility signal cyan (#00F0FF) reserved for active system nodes, primary action targets, and live status signals.",
+      "Dual-font typography hierarchy combining authoritative sans-serif headings with JetBrains Mono for specs and telemetry.",
+      "Precision 4px/8px corner framing with subtle CAD corner ticks."
+    ],
+    "rules": [
+      { "name": "The Signal Cyan Hierarchy Rule", "body": "Signal Cyan (#00F0FF) is reserved for intentional interactive targets, status indicators, and focus states.", "section": "colors" }
+    ],
+    "dos": [
+      "Do use JetBrains Mono for numbers, metrics, code snippets, coordinates, and CAD labels.",
+      "Do maintain strict WCAG AA contrast (≥ 4.5:1 for body text).",
+      "Do provide clickable node inspection drawers for architectural deep dives."
+    ],
+    "donts": [
+      "Don't use gradient text fills across headlines.",
+      "Don't place kickers/eyebrows above main headings.",
+      "Don't use thick single-sided colored border tabs on cards or alert boxes.",
+      "Don't use emoji or unstyled icons; use crisp, single-weight SVG icons."
+    ]
+  }
+}
